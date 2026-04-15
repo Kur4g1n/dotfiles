@@ -1,0 +1,8 @@
+README*.md
+.gitignore
+.git
+install
+lib
+install.sh
+Brewfile
+.DS_Store
