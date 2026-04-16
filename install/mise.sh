@@ -11,4 +11,8 @@ installing_banner "language runtimes"
 
 mise install -C "$HOME"
 
+# Nvim dependencies
+mise exec -C "$HOME" -- pipx install pynvim
+mise exec -C "$HOME" -- npm install -g @mermaid-js/mermaid-cli
+
 echo "wiring configuration complete!"

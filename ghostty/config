@@ -1,0 +1,11 @@
+font-size = 19
+
+background-opacity = 0.99
+background-blur = "macos-glass-clear"
+mouse-hide-while-typing = true
+macos-option-as-alt = true
+
+custom-shader = "shaders/space.glsl"
+custom-shader = "shaders/cursor_warp.glsl"
+
+theme = "Catppuccin Macchiato"

@@ -13,3 +13,7 @@ is_installed() {
 config_banner() {
   banner "Configuring $1"
 }
+
+skipping() {
+  echo "Skipping $1"
+}

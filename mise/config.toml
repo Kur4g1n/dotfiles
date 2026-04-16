@@ -38,7 +38,7 @@ experimental = true
 
 [tools]
 # Node.js - LTS version for stability
-node = "lts"
+node = "latest"
 
 # Python - latest
 python = "latest"

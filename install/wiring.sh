@@ -15,6 +15,7 @@ if ! grep -qxF "$zdotdir_line" ~/.zshenv 2>/dev/null; then
 fi
 
 rm -f ~/.zshrc ~/.zprofile ~/.zlogin ~/.zlogout
+[ -e ~/.config/nvim ] && mv ~/.config/nvim{,.bak}
 
 if ! is_installed stow; then
   echo "ERROR: stow not installed. Should be installed via Homebrew."

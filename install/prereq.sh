@@ -2,7 +2,6 @@
 
 source "${DOTFILES_DIR}"/lib/dotfiles.sh
 
-
 if ! xcode-select -p &>/dev/null; then
   installing_banner "Xcode Command Line Tools"
   xcode-select --install
@@ -16,7 +15,7 @@ if ! is_installed brew; then
 
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "${DOTFILES_DIR}/zsh/.zprofile"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>"${DOTFILES_DIR}/zsh/.zprofile"
 else
   skipping "Homebrew"
 fi
