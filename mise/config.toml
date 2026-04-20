@@ -51,3 +51,4 @@ rust = "stable"
 
 # PipX - latest
 pipx = "latest"
+uv = "latest"

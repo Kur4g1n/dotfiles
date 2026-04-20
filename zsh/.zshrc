@@ -7,6 +7,7 @@ export EDITOR=nvim
 
 export EZA_CONFIG_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/eza"
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
 # Fzf Styling
 export FZF_DEFAULT_OPTS=" \
@@ -31,6 +32,9 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in zsh plugins
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
@@ -58,6 +62,13 @@ zstyle ':fzf-tab:complete:z:*' fzf-preview $FZF_TAB_PREVIEW
 zstyle ':fzf-tab:complete:ls:*' fzf-preview $FZF_TAB_PREVIEW
 zstyle ':fzf-tab:complete:eza:*' fzf-preview $FZF_TAB_PREVIEW
 zstyle ':fzf-tab:complete:nvim:*' fzf-preview $FZF_TAB_PREVIEW
+
+# Zsh Vi mode config
+function zvm_after_init() {
+  zvm_bindkey viins '^R' fzf-history-widget
+  zvm_bindkey vicmd '/' fzf-history-widget
+  zvm_bindkey visual '/' fzf-history-widget
+}
 
 # History
 HISTFILE=~/.config/zsh_history

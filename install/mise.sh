@@ -9,10 +9,12 @@ fi
 
 installing_banner "language runtimes"
 
+export MISE_IGNORED_CONFIG_PATHS="${DOTFILES_DIR}/mise/config.toml"
+
 mise install -C "$HOME"
 
 # Nvim dependencies
 mise exec -C "$HOME" -- pipx install pynvim
-mise exec -C "$HOME" -- npm install -g @mermaid-js/mermaid-cli
+mise exec -C "$HOME" -- env NPM_CONFIG_LOGLEVEL=silent npm install -g @mermaid-js/mermaid-cli >/dev/null
 
 echo "wiring configuration complete!"
