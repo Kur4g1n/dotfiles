@@ -6,7 +6,7 @@ config_banner "configuring zsh"
 
 zdotdir="${HOME}/.config/zsh"
 zdotdir_line="export ZDOTDIR=\"${zdotdir}\""
-mise_ignored_config_line="export MISE_IGNORED_CONFIG_PATHS=\"${DOTFILES_DIR}/mise/config.toml\""
+mise_ignored_config_line="export MISE_CEILING_PATHS=\"${DOTFILES_DIR}\""
 
 mkdir -p "${zdotdir}"
 touch ~/.zshenv

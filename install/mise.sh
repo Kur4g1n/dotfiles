@@ -14,7 +14,10 @@ export MISE_IGNORED_CONFIG_PATHS="${DOTFILES_DIR}/mise/config.toml"
 mise install -C "$HOME"
 
 # Nvim dependencies
-mise exec -C "$HOME" -- pipx install pynvim
-mise exec -C "$HOME" -- env NPM_CONFIG_LOGLEVEL=silent npm install -g @mermaid-js/mermaid-cli >/dev/null
+export UV_TOOL_BIN_DIR="${HOME}/.local/bin"
+export PATH="${UV_TOOL_BIN_DIR}:${PATH}"
 
-echo "wiring configuration complete!"
+mise exec -C "$HOME" uv -- uv tool install --upgrade pynvim
+mise exec -C "$HOME" node@lts -- env NPM_CONFIG_LOGLEVEL=silent npm install -g @mermaid-js/mermaid-cli >/dev/null
+
+echo "langage runtimes configuration complete!"

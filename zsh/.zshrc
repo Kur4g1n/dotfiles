@@ -9,6 +9,8 @@ export EZA_CONFIG_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/eza"
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
+export PATH="${HOME}/.local/bin:${PATH}"
+
 # Fzf Styling
 export FZF_DEFAULT_OPTS=" \
 --border \

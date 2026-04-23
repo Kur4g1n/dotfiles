@@ -13,13 +13,13 @@ macOS Tahoe 26.4.1 or later.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Kur4g1n/dotfiles.git
+git clone https://github.com/Kur4g1n/dotfiles.git "$HOME/dotfiles"
 ```
 
 ### 2. Start the Installation Script
 
 ```bash
-./install.sh
+cd "$HOME/dotfiles" && ./install.sh
 ```
 
 Stow will create dotfile symlinks in `~/.config`.
