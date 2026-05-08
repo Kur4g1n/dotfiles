@@ -6,3 +6,6 @@ lib
 install.sh
 Brewfile
 .DS_Store
+.editorconfig
+.stowrc
+nvim.log

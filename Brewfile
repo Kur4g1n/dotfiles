@@ -11,6 +11,9 @@ brew "eza"
 brew "vivid"
 brew "zoxide"
 
+brew "docker"
+brew "docker-compose"
+
 # TUI
 brew "lazygit"
 
@@ -27,4 +30,4 @@ cask "font-jetbrains-mono-nerd-font"
 
 # Applications
 cask "ghostty"
-cask "codex"
+cask "claude-code"

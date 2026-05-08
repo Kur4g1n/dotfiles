@@ -9,8 +9,6 @@ fi
 
 installing_banner "language runtimes"
 
-export MISE_IGNORED_CONFIG_PATHS="${DOTFILES_DIR}/mise/config.toml"
-
 mise install -C "$HOME"
 
 # Nvim dependencies
