@@ -1,6 +1,7 @@
 # Dotfiles
 
-My personal setup scripts for Mac machines. Clone the repo, run one command, and you're done.
+My personal setup scripts for Mac machines. Clone the repo, run one command, and
+you're done.
 
 ## Supported Systems
 
@@ -24,8 +25,9 @@ cd "$HOME/dotfiles" && ./install.sh
 
 Stow will create dotfile symlinks in `~/.config`.
 
-> [!NOTE]
-> The script assumes that the dotfiles folder is located at `~/dotfiles`. This can be changed by setting the `DOTFILES_DIR` environment variable.
+> [!NOTE] The script assumes that the dotfiles folder is located at
+> `~/dotfiles`. This can be changed by setting the `DOTFILES_DIR` environment
+> variable.
 
 ## What Gets Installed
 
@@ -38,14 +40,16 @@ Stow will create dotfile symlinks in `~/.config`.
 
 ### Tools Managed by mise
 
-Language runtimes and package managers are handled by [mise](https://mise.jdx.dev/) instead of Homebrew for easier version management:
+Language runtimes and package managers are handled by
+[mise](https://mise.jdx.dev/) instead of Homebrew for easier version management:
 
 - Node.js
 - Python
 - Go
 - Rust
 
-After symlinks are created, global defaults live in `~/.config/mise/config.toml`. Override them per project with `.mise.toml`.
+After symlinks are created, global defaults live in
+`~/.config/mise/config.toml`. Override them per project with `.mise.toml`.
 
 ## Updating
 

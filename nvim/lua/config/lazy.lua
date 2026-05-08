@@ -14,6 +14,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Expose hererocks luarocks/lua on Neovim's PATH so plugins like mason find them.
+vim.env.PATH = vim.fn.stdpath("data") .. "/lazy-rocks/hererocks/bin:" .. vim.env.PATH
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -35,6 +38,9 @@ require("lazy").setup({
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
   }, -- automatically check for plugin updates
+  rocks = {
+    hererocks = true,
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins
