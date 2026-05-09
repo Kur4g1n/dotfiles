@@ -6,6 +6,7 @@ eval "$(mise activate zsh)"
 export EDITOR=nvim
 
 export EZA_CONFIG_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/eza"
+export STARSHIP_CONFIG="${XDG_CONFIG_HOME:-${HOME}/.config}/starship/starship.toml"
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
@@ -82,6 +83,16 @@ setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
+
+# Aliases
+alias l="eza -a --icons"
+alias ll="eza -lha --icons --git"
+alias lt="eza -a --tree --level=2  --icons"
+
+alias cl='clear'
+
+# Starship Prompt
+eval "$(starship init zsh)"
 
 # Extra Completions
 eval "$(fzf --zsh)"

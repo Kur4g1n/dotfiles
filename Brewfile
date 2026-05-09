@@ -16,6 +16,9 @@ brew "wget"
 brew "docker"
 brew "docker-compose"
 
+# Shell Prompt
+brew "starship"
+
 # TUI
 brew "lazygit"
 

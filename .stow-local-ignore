@@ -1,4 +1,4 @@
-README*.md
+README.md
 .gitignore
 .git
 install
@@ -8,4 +8,5 @@ Brewfile
 .DS_Store
 .editorconfig
 .stowrc
+.prettierrc
 nvim.log
