@@ -13,6 +13,7 @@ brew "vivid"
 brew "zoxide"
 brew "wget"
 brew "bat"
+brew "git-delta"
 
 brew "docker"
 brew "docker-compose"

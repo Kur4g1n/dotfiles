@@ -60,11 +60,12 @@ zinit cdreplay -q
 zstyle ':completion:*' menu no
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+_comp_options+=(globdots)
 
 FZF_TAB_PREVIEW='if [[ $(file -bL --mime-encoding $realpath 2>/dev/null) != binary ]]; then
     bat --color=always --style=numbers --line-range=:100 $realpath
   else
-    eza --color=always --icons=always -1 --group-directories-first $realpath
+    eza --color=always --icons=always --all -1 --group-directories-first $realpath
   fi'
 
 zstyle ':fzf-tab:complete:cd:*' fzf-preview "$FZF_TAB_PREVIEW"
@@ -108,3 +109,7 @@ eval "$(starship init zsh)"
 # Extra Completions
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+eval "$(rustup completions zsh)"
+eval "$(rustup completions zsh cargo)"
