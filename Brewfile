@@ -12,6 +12,7 @@ brew "eza"
 brew "vivid"
 brew "zoxide"
 brew "wget"
+brew "bat"
 
 brew "docker"
 brew "docker-compose"

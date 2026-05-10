@@ -11,6 +11,8 @@ export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
 export PATH="${HOME}/.local/bin:${PATH}"
+export MANROFFOPT="-c"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Fzf Styling
 export FZF_DEFAULT_OPTS=" \
@@ -59,13 +61,17 @@ zstyle ':completion:*' menu no
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-FZF_TAB_PREVIEW='eza --color=always --icons=always -1 --group-directories-first $realpath'
+FZF_TAB_PREVIEW='if [[ $(file -bL --mime-encoding $realpath 2>/dev/null) != binary ]]; then
+    bat --color=always --style=numbers --line-range=:100 $realpath
+  else
+    eza --color=always --icons=always -1 --group-directories-first $realpath
+  fi'
 
-zstyle ':fzf-tab:complete:cd:*' fzf-preview $FZF_TAB_PREVIEW
-zstyle ':fzf-tab:complete:z:*' fzf-preview $FZF_TAB_PREVIEW
-zstyle ':fzf-tab:complete:ls:*' fzf-preview $FZF_TAB_PREVIEW
-zstyle ':fzf-tab:complete:eza:*' fzf-preview $FZF_TAB_PREVIEW
-zstyle ':fzf-tab:complete:nvim:*' fzf-preview $FZF_TAB_PREVIEW
+zstyle ':fzf-tab:complete:cd:*' fzf-preview "$FZF_TAB_PREVIEW"
+zstyle ':fzf-tab:complete:z:*' fzf-preview "$FZF_TAB_PREVIEW"
+zstyle ':fzf-tab:complete:ls:*' fzf-preview "$FZF_TAB_PREVIEW"
+zstyle ':fzf-tab:complete:eza:*' fzf-preview "$FZF_TAB_PREVIEW"
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview "$FZF_TAB_PREVIEW"
 
 # Zsh Vi mode config
 function zvm_after_init() {
@@ -85,11 +91,16 @@ setopt hist_save_no_dups
 setopt hist_find_no_dups
 
 # Aliases
-alias l="eza -a --icons"
-alias ll="eza -lha --icons --git"
-alias lt="eza -a --tree --level=2  --icons"
+alias l="eza -a --icons=auto"
+alias ll="eza -lha --icons=auto --git"
+alias lt="eza -a --tree --level=2 --icons=auto"
 
-alias cl='clear'
+alias cat="bat --paging=never"
+
+alias cl="clear"
+
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # Starship Prompt
 eval "$(starship init zsh)"
