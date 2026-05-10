@@ -10,7 +10,8 @@ fi
 installing_banner "Homebrew CLI packages"
 if [[ -f "${DOTFILES_DIR}/Brewfile" ]]; then
   cd "${DOTFILES_DIR}" || exit
-  brew bundle --file=Brewfile
+  brew update
+  brew bundle --file=Brewfile --upgrade
   cd - || exit
 else
   echo "WARNING: No Brewfile found in ${DOTFILES_DIR}"
