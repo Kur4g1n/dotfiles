@@ -5,6 +5,8 @@ background-blur = "macos-glass-clear"
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 
+shell-integration-features = ssh-env,ssh-terminfo
+
 custom-shader = "shaders/space.glsl"
 custom-shader = "shaders/cursor_warp.glsl"
 
