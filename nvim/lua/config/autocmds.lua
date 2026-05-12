@@ -6,3 +6,13 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Mirror yanks to system clipboards after `vim.opt.clipboard = ""`
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("yank_to_system_clipboard", { clear = true }),
+  callback = function()
+    if vim.v.event.operator == "y" then
+      vim.fn.setreg("+", vim.v.event.regcontents, vim.v.event.regtype)
+    end
+  end,
+})

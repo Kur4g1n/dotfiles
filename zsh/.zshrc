@@ -104,9 +104,12 @@ alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # Starship Prompt
-eval "$(starship init zsh)"
+zvm_after_init_commands+=('eval "$(starship init zsh)"')
 
 # Extra Completions
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(uv generate-shell-completion zsh)"
+
+# Machine-local overrides
+[[ -f "${ZDOTDIR:-${HOME}/.config/zsh}/.zshrc.local" ]] && source "${ZDOTDIR:-${HOME}/.config/zsh}/.zshrc.local"
