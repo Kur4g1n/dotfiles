@@ -79,6 +79,11 @@ function zvm_after_init() {
   zvm_bindkey viins '^R' fzf-history-widget
   zvm_bindkey vicmd '/' fzf-history-widget
   zvm_bindkey visual '/' fzf-history-widget
+
+  zvm_bindkey vicmd  'p' zvm_paste_clipboard_after
+  zvm_bindkey vicmd  'P' zvm_paste_clipboard_before
+  zvm_bindkey visual 'p' zvm_visual_paste_clipboard
+  zvm_bindkey visual 'P' zvm_visual_paste_clipboard
 }
 
 # History

@@ -49,6 +49,8 @@ go = "latest"
 # Rust - stable toolchain
 rust = "stable"
 
-# PipX - latest
-pipx = "latest"
+# UV - latest
 uv = "latest"
+
+# Tools
+golangci-lint = "latest"

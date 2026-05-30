@@ -14,6 +14,7 @@ brew "zoxide"
 brew "wget"
 brew "bat"
 brew "git-delta"
+brew "gh"
 
 brew "docker"
 brew "docker-compose"
@@ -37,4 +38,3 @@ cask "font-jetbrains-mono-nerd-font"
 
 # Applications
 cask "ghostty"
-cask "claude-code"

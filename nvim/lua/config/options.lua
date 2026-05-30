@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.g.python3_host_prog = vim.fn.expand("~/.local/bin/pynvim-python")
 
+-- Support for ssh sessions system clipboard
 if os.getenv("SSH_TTY") then
   vim.g.clipboard = {
     name = "OSC 52",
