@@ -18,6 +18,7 @@ brew "gh"
 
 brew "docker"
 brew "docker-compose"
+brew "colima"
 
 # Shell Prompt
 brew "starship"
